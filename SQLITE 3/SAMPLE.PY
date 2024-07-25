@@ -100,4 +100,31 @@
 
 
 
+# import sqlite3
+# con=sqlite3.connect("database/SQLITE 3/sample1.db")
+# data=con.execute("Select * from student where name like '_a%' ")
+# print ("{:10}{:16}{:10}".format("age","name","mark"))
+# for i in data:
+#     print ("{:10}{:16}{:10}".format(i[0],i[1],i[2]))
 
+
+
+
+
+# import sqlite3
+# con=sqlite3.connect("database/SQLITE 3/sample1.db")
+# data=con.execute("Select * from student order by name desc")
+# print ("{:10}{:10}{:6}".format("age","name","mark"))
+# for i in data:
+#     print ("{:10}{:10}{:6}".format(i[0],i[1],i[2]))
+
+
+
+
+
+import sqlite3
+con=sqlite3.connect("database/SQLITE 3/sample1.db")
+data=con.execute("Select name, count(mark) from student group by name")
+print ("{:10}{:10}{:6}".format("age","name","mark"))
+for i in data:
+    print(i)
