@@ -122,9 +122,9 @@
 
 
 
-import sqlite3
-con=sqlite3.connect("database/SQLITE 3/sample1.db")
-data=con.execute("Select name, count(mark) from student group by name")
-print ("{:10}{:10}{:6}".format("age","name","mark"))
-for i in data:
-    print(i)
+# import sqlite3
+# con=sqlite3.connect("database/SQLITE 3/sample1.db")
+# data=con.execute("Select name, count(mark) from student group by name")
+# print ("{:10}{:10}{:6}".format("age","name","mark"))
+# for i in data:
+#     print(i)
