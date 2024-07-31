@@ -69,6 +69,10 @@
 # for i in data:
 #     print("{:<10}{:<10}{:<10}".format(i[0],i[1],i[2]))
 
+
+
+
+
 # import sqlite3
 # con=sqlite3.connect("database/SQLITE 3/sample1.db")
 # name=str(input("name"))
@@ -128,3 +132,30 @@
 # print ("{:10}{:10}{:6}".format("age","name","mark"))
 # for i in data:
 #     print(i)
+
+
+
+
+
+import sqlite3
+con=sqlite3.connect("database/SQLITE 3/sample1.db") 
+
+try:
+    con.execute("Create table employee (name text,age int,salary real)") 
+except:
+    pass
+a=int(input("Enter the number of employees"))
+for i in range (a):
+    name=input("Name")
+    age=int(input("Age"))
+    mark=float(input("salary"))
+
+    con.execute("insert into employee(name,age,salary) values(?,?,?)",(name,age,)) 
+    con.commit()
+data=con.execute("select * from employee")
+print("{:<10}{:<10}{:<10}".format('age','name','salary'))
+print("=" * 24)
+
+for i in data:
+    print("{:<10}{:<10}{:<10}".format(i[0],i[1],i[2]))
+
